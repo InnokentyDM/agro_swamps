@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Layer: Drag and Drop GeoJSON</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link
+            href="https://unpkg.com/material-components-web@6.0.0/dist/material-components-web.css"
+            rel="stylesheet"
+    />
+    <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi3S5BNmASz_w9N7krzdQbvsBQkKE-94U&callback=initialize&libraries=&v=weekly"
+            defer
+    ></script>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="./index.js"></script>
+</head>
+<body>
+<div id="container">
+    <div id="map"></div>
+    <div id="sidebar" class="mdc-typography">
+        <div class="file" draggable="true" data-value="0">
+            <span class="material-icons">text_snippet</span>
+            <div class="filename">initial.geojson</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
