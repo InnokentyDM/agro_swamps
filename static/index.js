@@ -20,7 +20,7 @@ function toggleCitiesNames() {
 
 function loadGeoJsonString(geoString) {
     try {
-        console.log(geoString);
+        // console.log(geoString);
         const geojson = JSON.parse(geoString);
         clearMap();
         map.data.addGeoJson(geojson);
@@ -157,14 +157,4 @@ const analyzeBounds = async () => {
     });
     console.log(await response.json())
 };
-
-// const analyzeBounds = async (e) => {
-//     console.log(map.getBounds().toString());
-//
-//     await fetch(`http://127.0.0.1:8000/analyze_bounds`, {
-//         method: "POST",
-//         body: {'geo_data': map.getBounds().toString()},
-//     })
-//};
-
 

@@ -1,5 +1,4 @@
-from fastapi import FastAPI, Request, Form
-from fastapi.responses import HTMLResponse
+from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
@@ -39,7 +38,28 @@ async def get_initial_dataset():
 class GeoData(BaseModel):
     geo_data: str
 
+
 @app.post("/analyze_bounds")
 async def analyze_bounds(geo_data: GeoData):
-    print(geo_data)
-    return geo_data
+    # Координаты точек, которые приходят с карты
+    # Тут нужно вызвать код для анализа и вернуть dict с geojson данными,
+    # которые отобразятся на карте
+    bermuda = {
+        "type": "Feature",
+        "properties": {
+            "name": "Bermuda Triangle",
+            "area": 1150180
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [-64.73, 32.31],
+                    [-80.19, 25.76],
+                    [-66.09, 18.43],
+                    [-64.73, 32.31]
+                ]
+            ]
+        }
+    }
+    return bermuda
