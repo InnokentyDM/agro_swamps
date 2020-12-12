@@ -22,6 +22,7 @@ function loadGeoJsonString(geoString) {
     try {
         console.log(geoString);
         const geojson = JSON.parse(geoString);
+        clearMap();
         map.data.addGeoJson(geojson);
     } catch (e) {
         alert("Not a GeoJSON file!");
@@ -94,13 +95,11 @@ function handleDrop(e) {
     e.stopPropagation();
     removeClassFromDropTarget(e);
     const files = e.dataTransfer.files;
-
     if (files.length) {
         // process file(s) being dropped
         // grab the file data from each file
         for (let i = 0, file; (file = files[i]); i++) {
             const reader = new FileReader();
-
             reader.onload = function (e) {
                 loadGeoJsonString(reader.result);
             };
@@ -134,6 +133,12 @@ function getInitialDataset() {
         .then((data) => {
             files.push(JSON.parse(data));
         });
+}
+
+function clearMap() {
+    map.data.forEach(function (feature) {
+        map.data.remove(feature);
+    });
 }
 
 function initialize() {
