@@ -1,31 +1,3 @@
-// let map;
-// function initMap() {
-//     const map = new google.maps.Map(document.getElementById("map"), {
-//         zoom: 6,
-//         center: {lat: 52.721246, lng: 41.452238},
-//     });
-//
-//     let geoJsonData;
-//     fetch('http://127.0.0.1:8000/get_initial_dataset')
-//         .then((response) => {
-//             return response.json();
-//         })
-//         .then((data) => {
-//             geoJsonData = JSON.parse(data);
-//             map.data.addGeoJson(geoJsonData);
-//         });
-//
-//     map.data.setStyle({strokeColor: "blue"});
-//     return map;
-// }
-//
-// map = initMap();
-//
-// function loadGeoJson() {
-//     let textArea = $('#jsonTextArea').val();
-//     map.data.addGeoJson(textArea);
-// }
-
 let map;
 
 function initMap() {

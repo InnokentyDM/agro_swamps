@@ -19,8 +19,8 @@ body {
 
 #sidebar {
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   overflow: auto;
 }
 
@@ -32,17 +32,17 @@ body {
   text-align: center;
 }
 .file:hover .material-icons {
-  color: darkorange;
+  color: darkblue;
 }
 .file:hover .filename {
   font-weight: bold;
 }
 .file .material-icons {
   font-size: 50px;
-  color: orange;
+  color: blue;
 }
 .file .material-icons:hover {
-  color: darkorange;
+  color: darkblue;
 }
 .file .filename {
   margin-top: 0.5em;
