@@ -40,6 +40,10 @@ body {
     text-align: center;
 }
 
+/*.manage-panel {*/
+
+/*}*/
+
 .file:hover .material-icons {
     color: darkblue;
 }
@@ -84,6 +88,7 @@ body {
     height: 100%;
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
 }
 
 #map {
@@ -101,3 +106,4 @@ body {
     background-color: green!important;
     color: white;
 }
+
