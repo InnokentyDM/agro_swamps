@@ -142,10 +142,24 @@ function initialize() {
     initEvents();
 }
 
-function analyzeBounds(bounds) {
-    fetch('http://127.0.0.1:8000/analyze_bounds', {
+const analyzeBounds = async () => {
+    let response = await fetch('http://127.0.0.1:8000/analyze_bounds', {
         method: 'POST',
-        body: map.getBounds().toString()
-    })
-}
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({"geo_data": map.getBounds().toString()})
+    });
+    console.log(await response.json())
+};
+
+// const analyzeBounds = async (e) => {
+//     console.log(map.getBounds().toString());
+//
+//     await fetch(`http://127.0.0.1:8000/analyze_bounds`, {
+//         method: "POST",
+//         body: {'geo_data': map.getBounds().toString()},
+//     })
+//};
+
 

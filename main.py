@@ -1,9 +1,10 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic.main import BaseModel
 
 from settings import settings
 
@@ -35,6 +36,10 @@ async def get_initial_dataset():
         return response_data
 
 
+class GeoData(BaseModel):
+    geo_data: str
+
 @app.post("/analyze_bounds")
-async def analyze_bounds():
-    pass
+async def analyze_bounds(geo_data: GeoData):
+    print(geo_data)
+    return geo_data
