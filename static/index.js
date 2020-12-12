@@ -7,6 +7,10 @@ function initMap() {
         center: {lat: 52.721246, lng: 41.452238},
         mapTypeId: 'hybrid',
     });
+    map.data.setStyle({
+        fillColor: "green",
+        strokeWeight: 1,
+    });
 }
 
 function toggleCitiesNames() {
@@ -155,6 +159,8 @@ const analyzeBounds = async () => {
         },
         body: JSON.stringify({"geo_data": map.getBounds().toString()})
     });
-    console.log(await response.json())
+    let geojson = await response.json();
+    loadGeoJsonString(JSON.stringify(geojson));
+    alert('Analyze is finished')
 };
 
