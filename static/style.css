@@ -27,8 +27,8 @@ body {
 
 #sidebar {
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     overflow: auto;
 }
 
@@ -77,10 +77,10 @@ body {
 }
 
 #sidebar {
-    flex-basis: 15rem;
+    flex-basis: 10rem;
     /*flex-grow: 1;*/
     padding: 1rem;
-    max-width: 30rem;
+    /*max-width: 30rem;*/
     height: 100%;
     box-sizing: border-box;
     display: flex;
@@ -90,4 +90,14 @@ body {
     flex-basis: 0;
     flex-grow: 4;
     height: 100%;
+}
+
+#toggle-cities-button {
+    background-color: darkgray;
+    color: white;
+}
+
+.active {
+    background-color: green!important;
+    color: white;
 }

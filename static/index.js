@@ -5,7 +5,17 @@ function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
         zoom: 6,
         center: {lat: 52.721246, lng: 41.452238},
+        mapTypeId: 'hybrid',
     });
+}
+
+function toggleCitiesNames() {
+    document.getElementById('toggle-cities-button').classList.toggle('active');
+    if (map.mapTypeId == 'hybrid') {
+        map.setMapTypeId('satellite');
+    } else if (map.mapTypeId == 'satellite') {
+        map.setMapTypeId('hybrid');
+    }
 }
 
 function loadGeoJsonString(geoString) {
