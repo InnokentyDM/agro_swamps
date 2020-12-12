@@ -44,6 +44,7 @@ async def analyze_bounds(geo_data: GeoData):
     # Координаты точек, которые приходят с карты
     # Тут нужно вызвать код для анализа и вернуть dict с geojson данными,
     # которые отобразятся на карте
+    # bermuda для примера
     bermuda = {
         "type": "Feature",
         "properties": {
