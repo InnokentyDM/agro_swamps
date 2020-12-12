@@ -142,5 +142,10 @@ function initialize() {
     initEvents();
 }
 
-
+function analyzeBounds(bounds) {
+    fetch('http://127.0.0.1:8000/analyze_bounds', {
+        method: 'POST',
+        body: map.getBounds().toString()
+    })
+}
 
