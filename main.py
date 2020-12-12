@@ -35,6 +35,6 @@ async def get_initial_dataset():
         return response_data
 
 
-@app.get("/submit_geojson")
-async def submit_geojson():
+@app.post("/analyze_bounds")
+async def analyze_bounds():
     pass
