@@ -24,8 +24,13 @@
     <div id="map"></div>
     <div id="sidebar" class="mdc-typography">
         <div>
-            <button type="button" class="active" id="toggle-cities-button"
-                    onclick="toggleCitiesNames()">Cities Names
+            <input type="checkbox" id="toggle-cities-button" checked
+                    onchange="toggleCitiesNames()">Cities Names
+            </input>
+            <button type="button" id="analyze" onchange="analyzeBounds()
+">Analyze</button>
+            <button type="button" id="clear-map" onclick="initMap()
+">Clear Map
             </button>
         </div>
         <div class="file" draggable="true" data-value="0">
