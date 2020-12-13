@@ -130,7 +130,7 @@ function handleDrop(e) {
 let files = [];
 
 function getInitialDataset() {
-    fetch('http://127.0.0.1:8000/get_initial_dataset')
+    fetch('http://178.21.10.141:8000/get_initial_dataset')
         .then((response) => {
             return response.json();
         })
@@ -152,7 +152,7 @@ function initialize() {
 }
 
 const analyzeBounds = async () => {
-    let response = await fetch('http://127.0.0.1:8000/analyze_bounds', {
+    let response = await fetch('http://178.21.10.141:8000/analyze_bounds', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
