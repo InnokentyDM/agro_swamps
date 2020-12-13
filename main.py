@@ -172,7 +172,7 @@ def routine(geo_data: GeoData):
     h_median = np.median(normalized_heights)
     b_median = np.median(normalized_brightness)
     def isSwamp(h, b):
-        if (h + b) > (h_median + b_median) :
+        if (h + b) < (h_median + b_median) :
             return True
         return False
     vectIsSwamp = np.vectorize(isSwamp)
